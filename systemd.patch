@@ -63,20 +63,20 @@
  
      def shutdown(self, widget = None, data = None):
 -        os.system("/usr/bin/gksudo \"/sbin/shutdown -h now\" &")
-+        os.system("dbus-send --system --print-reply --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop &")
++        os.system("systemctl poweroff &")
          gtk.main_quit()
  
      def reboot(self, widget = None, data = None):
 -        os.system("/usr/bin/gksudo \"/sbin/shutdown -r now\" &")
-+        os.system("dbus-send --system --print-reply --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart &")
++        os.system("systemctl reboot &")
 +        gtk.main_quit()
 +
 +    def suspend(self, widget = None, data = None):
-+        os.system("dbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.Suspend &")
++        os.system("systemctl suspend &")
 +        gtk.main_quit()
 +
 +    def hibernate(self, widget = None, data = None):
-+        os.system("dbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.Hibernate &")
++        os.system("systemctl hibernate &")
          gtk.main_quit()
  
  def main():

@@ -1,5 +1,5 @@
 --- pygtk-shutdown	2011-08-22 19:18:04.000000000 -0700
-+++ pygtk-shutdown-ck-up	2011-08-22 19:19:40.000000000 -0700
++++ pygtk-shutdown-systemd	2011-08-22 19:19:40.000000000 -0700
 @@ -37,13 +37,17 @@
  
          self.frame1 = gtk.Frame()

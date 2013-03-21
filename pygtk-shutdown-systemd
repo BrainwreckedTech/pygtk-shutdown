@@ -4,7 +4,7 @@
 # pygtk-shutdown - logout/reboot/shutdown your computer with an
 # easy-to-use dialog, with minimal dependencies
 # Version: 1.0
-# Copyright (C) 2011 doorknob60 <doorknob60 at gmail dot com>
+# Copyright (C) 2013 Paul A. Hinchberger III <paulhinchberger3 at gmail dot com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ import gtk
 import os
 import sys
 
-LOGOUT_COMMAND = "openbox --exit"
+LOGOUT_COMMAND = "killall --user $USER -TERM"
 
 class ShutdownDialog:
     def __init__(self):
